@@ -13,10 +13,10 @@ class Chat
     @addMessage(msg)
 
   showMessage: (message) ->
-    $('#messages').prepend(@messageForDisplay(message))
-
-  messageForDisplay: (message) ->
-    "<div class='message row'><div class='col-xs-2 nick'>#{message.nick}:</div><div class='col-xs-10 note'>#{message.note}<div class='time pull-right'>#{message.time}</div></div></div>"
+    template = $('#message_template').html();
+    Mustache.parse(template);
+    rendered = Mustache.render(template, {message: message});
+    $('#messages').prepend(rendered)
 
   showMessages: ->
     @showMessage(message) for message_id, message of @messages      
