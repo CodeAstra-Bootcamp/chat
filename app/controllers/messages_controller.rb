@@ -9,9 +9,9 @@ class MessagesController < ApplicationController
     @save_success = @message.save
   end
 
-  def refresh
-    @messages = Message.where('id > ?', params[:latest_id]).reverse_chron
-  end
+  # def refresh
+  #   @messages = Message.where('id > ?', params[:latest_id]).reverse_chron
+  # end
 
   private
 

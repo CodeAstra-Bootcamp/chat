@@ -9,5 +9,3 @@
     <%= render @messages %>
   </div>
 </div>
-
-<%= link_to "Refresh", refresh_messages_path(latest_id: @messages.first.id), remote: true, class: "hidden", id: "refresh_link" %>
