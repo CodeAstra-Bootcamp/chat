@@ -1,0 +1,63 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$bubble-color: #2c3e50;
+$bubble-text-color: #FFF;
+
+body {
+  // background-color: #8e44ad;
+  // color: #FFFFFF;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+  margin: 30px 0;
+
+  input.string.form-control {
+    width: 100%;
+  }
+
+  .form-group.string.message_nick {
+    width: 20%;
+  }
+
+  .form-group.string.message_note {
+    width: 79%;
+  }
+}
+
+#messages {
+  .message {
+    margin-bottom: 15px;
+
+    .nick {
+      font-weight: bold;
+      text-align: right;
+      padding: 6px 30px;
+    }
+
+    .note {
+      background-color: $bubble-color;
+      color: $bubble-text-color;
+      border-radius: 5px;
+      padding: 15px 15px;
+      position: relative;
+
+      .time {
+        color: #95a5a6;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        border-right: 15px solid $bubble-color;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        top: 10px;
+        left: -15px;
+      }
+    }
+  }
+}

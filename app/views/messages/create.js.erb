@@ -1,0 +1,5 @@
+<% if @save_success %>
+  $('#messages').prepend('<%= j render(@message) %>');
+  $('#note_input').val('');
+  $('a#refresh_link').attr('href', '<%= j refresh_messages_path(latest_id: @message.id) %>');
+<% end %>
