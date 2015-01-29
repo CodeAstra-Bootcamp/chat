@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     if request.xhr?
-      @messages = Message.all.to_json
+      @messages = Message.all.collect(&:for_pubnub).to_json
     else
       @new_message = Message.new
     end
