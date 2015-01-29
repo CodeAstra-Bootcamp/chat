@@ -5,9 +5,7 @@
     <%= f.submit 'Submit', hidden: true %>
   <% end %>
 
-  <div id="messages">
-    <%= render @messages %>
-  </div>
+  <div id="messages"></div>
 </div>
 
 <script id="message_template" type="x-tmpl-mustache">
@@ -19,3 +17,5 @@
   </div>
 </div>
 </script>
+
+<%= link_to "Get Messages", root_path, remote: true, id: "get_messages_link", class: "hidden" %>

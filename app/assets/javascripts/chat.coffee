@@ -18,10 +18,7 @@ class Chat
     rendered = Mustache.render(template, {message: message});
     $('#messages').prepend(rendered)
 
-  showMessages: ->
-    @showMessage(message) for message_id, message of @messages      
+  showMessages: (messages) ->
+    @showMessage(message) for message in JSON.parse(messages)
 
 @chat = new Chat
-
-$ ->
-  chat.showMessages()

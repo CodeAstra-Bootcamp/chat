@@ -1,17 +1,16 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.reverse_chron
-    @new_message = Message.new
+    if request.xhr?
+      @messages = Message.all.to_json
+    else
+      @new_message = Message.new
+    end
   end
 
   def create
     @message = Message.new(message_params)
     @save_success = @message.save
   end
-
-  # def refresh
-  #   @messages = Message.where('id > ?', params[:latest_id]).reverse_chron
-  # end
 
   private
 

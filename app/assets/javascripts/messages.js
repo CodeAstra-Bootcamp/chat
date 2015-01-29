@@ -12,4 +12,6 @@ $( document ).ready(function() {
     channel: 'codeastra-chat',
     message: function(m){chat.handleSocketResponse(m)}
   });
+
+  $('#get_messages_link').click();
 });
