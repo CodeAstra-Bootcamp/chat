@@ -1,2 +1,0 @@
-PUBNUB_PUBLISH_KEY = 'pub-c-f3905f29-1de9-4734-97fa-7c35eebb2aea'
-PUBNUB_SUBSCRIBE_KEY = 'sub-c-d20157de-a7a9-11e4-aa71-02ee2ddab7fe'

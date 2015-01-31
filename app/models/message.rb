@@ -30,8 +30,8 @@ class Message < ActiveRecord::Base
       return @pubnub if @pubnub
 
       @pubnub = Pubnub.new(
-       :publish_key   => PUBNUB_PUBLISH_KEY,
-       :subscribe_key => PUBNUB_SUBSCRIBE_KEY,
+       :publish_key   => ENV['PUBNUB_PUBLISH_KEY'],
+       :subscribe_key => ENV['PUBNUB_SUBSCRIBE_KEY'],
        :uuid => 'codeastra-chat-server'
        )
     end
