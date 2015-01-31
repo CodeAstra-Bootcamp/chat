@@ -52,3 +52,5 @@ end
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'pubnub'
+gem "devise"
+gem 'omniauth-facebook'
