@@ -1,4 +1,12 @@
 <div class="container">
+  <div id="current_user" class="pull-right">
+    <%= image_tag current_user.image, class: 'pull-left' %>
+    <%= content_tag :div, current_user.name, class: "name" %>
+    <%= link_to "Signout", destroy_user_session_path %>
+  </div>
+</div>
+
+<div class="container">
   <%= simple_form_for @new_message, remote: true, html: {class: "form-inline"} do |f| %>
     <%= f.input :nick, label: false, placeholder: "Your Nick", input_html: { id: "nick_input" } %>
     <%= f.input :note, label: false, placeholder: "Enter Message", input_html: { id: "note_input" } %>
