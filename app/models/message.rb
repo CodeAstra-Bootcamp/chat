@@ -16,6 +16,10 @@ class Message < ActiveRecord::Base
     }
   end
 
+  def dummy_publish
+    publish_to_pubnub
+  end
+
   private
 
     def publish_to_pubnub

@@ -9,6 +9,7 @@ class Chat
 
   handleSocketResponse: (msg) ->
     @addMessage(msg)
+    console.log "Triggered"
 
   showMessage: (message) ->
     template = $('#message_template').html();
