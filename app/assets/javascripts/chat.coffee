@@ -2,12 +2,10 @@ class Chat
   messages: {}
 
   addMessage: (msg) ->
-    if @messages[msg.id]
-      console.log "#{msg.note} is already there"
-    else
+    # Do nothing when @messages already has message, as the message is already shown
+    unless @messages[msg.id]
       @messages[msg.id] = msg
       @showMessage(msg)
-      console.log "#{msg.note} has been added"
 
   handleSocketResponse: (msg) ->
     @addMessage(msg)
