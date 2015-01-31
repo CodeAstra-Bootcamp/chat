@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'messages#index'
 
-  resources :messages do
-    get :refresh, on: :collection
-  end
+  resources :messages
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
