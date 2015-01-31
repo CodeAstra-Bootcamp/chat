@@ -1,17 +1,22 @@
 <div id="messages_container" class="container">
-  <%= simple_form_for @new_message, remote: true, html: {class: "form-inline"} do |f| %>
-    <%= f.input :nick, label: false, placeholder: "Your Nick", input_html: { id: "nick_input" } %>
-    <%= f.input :note, label: false, placeholder: "Enter Message", input_html: { id: "note_input" } %>
-    <%= f.submit 'Submit', hidden: true %>
-  <% end %>
+  <div id="enter_message">
+    <div class="message row">
+      <%= image_tag current_user.image, class: "user_image" %>
+      <%= simple_form_for @new_message, remote: true, html: {class: "form-inline"} do |f| %>
+        <%= f.input :note, label: false, placeholder: "Enter Message", input_html: { id: "note_input" } %>
+        <%= f.submit 'Submit', hidden: true %>
+      <% end %>  
+    </div>
+  </div>
 
   <div id="messages"></div>
 </div>
 
 <script id="message_template" type="x-tmpl-mustache">
 <div class="message row">
-  <div class="col-xs-2 nick">{{message.nick}}:</div>
-  <div class="col-xs-10 note">
+  <div class="user_name">{{message.name}}</div>
+  <img src="{{message.image}}" class="user_image" />
+  <div class="note">
     {{message.note}}
     <div class="time pull-right">{{message.time}}</div>
   </div>

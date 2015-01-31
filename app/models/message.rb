@@ -1,13 +1,16 @@
 class Message < ActiveRecord::Base
-  validates :nick, presence: true
   validates :note, presence: true
+  validates :user, presence: true
+
+  belongs_to :user
 
   after_create :publish_to_pubnub
 
   def for_pubnub
     {
       id: id,
-      nick: nick,
+      name: user.name,
+      image: user.image,
       note: note,
       time: created_at.strftime("at %l:%M  %P on %b %e")
     }
