@@ -23,4 +23,6 @@
 </div>
 </script>
 
-<%= link_to "Get Messages", root_path(format: 'js'), remote: true, id: "get_messages_link", class: "hidden" %>
+<div id="load_more_container">
+  <%= load_more_link %>
+</div>

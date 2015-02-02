@@ -1,1 +1,6 @@
 chat.showMessages('<%= j raw(@messages) %>');
+<% if @end_reached %>
+$('#get_messages_link').remove();
+<% else %>
+$('#get_messages_link').replaceWith('<%= j load_more_link(@last_message[:id]) %>');
+<% end %>
