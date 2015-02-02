@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
       @messages = @messages.collect(&:for_pubnub)
       @last_message = @messages.last
       @messages = @messages.to_json
-      @end_reached = (@last_message[:id] == Message.first.id)
+      @end_reached = @last_message.nil? || (@last_message[:id] == Message.first.id)
     else
       @new_message = Message.new
     end
