@@ -1,4 +1,0 @@
-<% if @messages.any? %>
-  $('#messages').prepend('<%= j render(@messages) %>');
-  $('a#refresh_link').attr('href', '<%= j refresh_messages_path(latest_id: @messages.first.id) %>');
-<% end %>

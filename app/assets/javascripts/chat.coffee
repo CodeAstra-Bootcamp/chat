@@ -12,6 +12,7 @@ class Chat
   handleSocketResponse: (msg) ->
     @addMessage(msg)
 
+
   showMessage: (message) ->
     template = $('#message_template').html();
     Mustache.parse(template);
