@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   #        :recoverable, :rememberable, :trackable, :validatable
   devise :rememberable, :trackable, :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
